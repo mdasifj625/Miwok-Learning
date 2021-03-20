@@ -60,9 +60,6 @@ public class ColorsActivity extends AppCompatActivity {
             };
 
 
-
-
-
     // Assign release resource in a global variable
     MediaPlayer.OnCompletionListener mCompleteListener = new MediaPlayer.OnCompletionListener() {
         @Override
@@ -75,8 +72,6 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_miwok_words);
-
-
 
         // initializing variables for audio focus and playback management (Audio manager system service).
         audioManager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
@@ -149,7 +144,6 @@ public class ColorsActivity extends AppCompatActivity {
                         releaseMediaPlayer();
                     }
                 }
-
 
 
             }
