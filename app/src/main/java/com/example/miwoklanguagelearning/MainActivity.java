@@ -1,58 +1,53 @@
 package com.example.miwoklanguagelearning;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
+
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
+import adapter.CategoryAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
+    ViewPager2 viewPager2;
+    TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        viewPager2 = findViewById(R.id.view_pager);
 
-        TextView numbers = findViewById(R.id.numbers);
-        TextView family = findViewById(R.id.family);
-        TextView colors = findViewById(R.id.colors);
-        TextView phrases = findViewById(R.id.phrases);
+        CategoryAdapter adapter = new CategoryAdapter(this);
 
+        viewPager2.setAdapter(adapter);
 
-        numbers.setOnClickListener(new View.OnClickListener() {
+        tabLayout = findViewById(R.id.miwok_tabs);
+
+//
+
+        new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), NumberActivity.class);
-                startActivity(intent);
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                if (position == 0) {
+                    tab.setText(R.string.category_numbers);
+                } else if (position == 1) {
+                    tab.setText(R.string.category_family);
+                } else if (position == 2) {
+                    tab.setText(R.string.category_colors);
+                } else {
+                    tab.setText(R.string.category_phrases);
+                }
             }
-        });
+        }).attach();
 
-        family.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), FamilyActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        colors.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ColorsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        phrases.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), PhraseActivity.class);
-                startActivity(intent);
-            }
-        });
 
     }
 

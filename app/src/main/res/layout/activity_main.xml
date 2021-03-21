@@ -1,69 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/tan_background"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.example.miwoklanguagelearning.MainActivity">
 
 
+<com.google.android.material.tabs.TabLayout
+    android:id="@+id/miwok_tabs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="8dp"
+    style="@style/CategoryTab"
+    android:background="@android:color/transparent"
+    app:tabIndicatorHeight="3dp"
+    app:tabMode="fixed"/>
 
-        <!-- Numbers category -->
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/category_numbers">
-            <TextView
-                android:id="@+id/numbers"
-                style="@style/CategoryStyle"
-                android:background="?android:attr/selectableItemBackground"
-                android:text="@string/category_numbers" />
-        </FrameLayout>
 
-        <!-- Family category -->
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/category_family">
-            <TextView
-                android:id="@+id/family"
-                style="@style/CategoryStyle"
-                android:background="?android:attr/selectableItemBackground"
-                android:text="@string/category_family" />
-        </FrameLayout>
-
-        <!-- Colors category -->
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/category_colors">
-            <TextView
-                android:id="@+id/colors"
-                style="@style/CategoryStyle"
-                android:background="?android:attr/selectableItemBackground"
-                android:text="@string/category_colors" />
-        </FrameLayout>
-
-        <!-- Phrases category -->
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/category_phrases">
-            <TextView
-                android:id="@+id/phrases"
-                style="@style/CategoryStyle"
-                android:background="?android:attr/selectableItemBackground"
-                android:text="@string/category_phrases" />
-        </FrameLayout>
+<androidx.viewpager2.widget.ViewPager2
+    android:id="@+id/view_pager"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/>
 
 
 
-    </LinearLayout>
+</LinearLayout>
 
 
-</ScrollView>
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent">-->
+
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:background="@color/tan_background"-->
+<!--    android:orientation="vertical"-->
+<!--    tools:context=".MainActivity">-->
+
+
+
+<!--    &lt;!&ndash; Numbers category &ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/category_numbers">-->
+<!--        <TextView-->
+<!--            android:id="@+id/numbers"-->
+<!--            style="@style/CategoryStyle"-->
+<!--            android:background="?android:attr/selectableItemBackground"-->
+<!--            android:text="@string/category_numbers" />-->
+<!--    </FrameLayout>-->
+
+<!--    &lt;!&ndash; Family category &ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/category_family">-->
+<!--        <TextView-->
+<!--            android:id="@+id/family"-->
+<!--            style="@style/CategoryStyle"-->
+<!--            android:background="?android:attr/selectableItemBackground"-->
+<!--            android:text="@string/category_family" />-->
+<!--    </FrameLayout>-->
+
+<!--    &lt;!&ndash; Colors category &ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/category_colors">-->
+<!--        <TextView-->
+<!--            android:id="@+id/colors"-->
+<!--            style="@style/CategoryStyle"-->
+<!--            android:background="?android:attr/selectableItemBackground"-->
+<!--            android:text="@string/category_colors" />-->
+<!--    </FrameLayout>-->
+
+<!--    &lt;!&ndash; Phrases category &ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/category_phrases">-->
+<!--        <TextView-->
+<!--            android:id="@+id/phrases"-->
+<!--            style="@style/CategoryStyle"-->
+<!--            android:background="?android:attr/selectableItemBackground"-->
+<!--            android:text="@string/category_phrases" />-->
+<!--    </FrameLayout>-->
+
+
+
+<!--</LinearLayout>-->
+
+
+<!--</ScrollView>-->

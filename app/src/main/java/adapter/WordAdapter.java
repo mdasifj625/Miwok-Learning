@@ -1,4 +1,4 @@
-package com.example.miwoklanguagelearning;
+package adapter;
 
 import android.content.Context;
 import android.media.MediaPlayer;
@@ -13,6 +13,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
+
+import com.example.miwoklanguagelearning.R;
+import com.example.miwoklanguagelearning.Word;
 
 import java.util.ArrayList;
 
