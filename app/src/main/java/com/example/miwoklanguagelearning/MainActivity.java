@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.miwok_tabs);
 
-//
+//  set the appropriate text on tabs
 
         new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
